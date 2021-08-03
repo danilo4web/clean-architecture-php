@@ -31,9 +31,6 @@ class Cpf
         $digit2 = $this->calculateDigit($cpf, self::FACTOR_DIGIT_2, self::MAX_DIGIT_2);
         $calculatedCheckDigit = $digit1 . $digit2;
 
-        echo $this->getCheckerDigit($cpf) . PHP_EOL;
-        echo $calculatedCheckDigit . PHP_EOL . PHP_EOL;
-
         if ($this->getCheckerDigit($cpf) != $calculatedCheckDigit) {
             throw new UnexpectedValueException("Invalid CPF!");
         }
@@ -47,7 +44,6 @@ class Cpf
 
     private function isInvalidLength(string $cpf): bool
     {
-        echo $cpf . PHP_EOL;
         return strlen($cpf) !== 11;
     }
 
@@ -61,9 +57,6 @@ class Cpf
             }
         }
 
-        echo "CPF: " . $cpf . PHP_EOL;
-        echo "Equals: " . $equals . PHP_EOL;
-        echo "CPF: " . strlen($cpf) . PHP_EOL;
         return $equals === strlen($cpf);
     }
 

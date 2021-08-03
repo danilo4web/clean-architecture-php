@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\App\Service;
+namespace Tests\App;
 
 use App\Coupon;
 use PHPUnit\Framework\TestCase;
